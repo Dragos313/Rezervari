@@ -17,6 +17,7 @@ namespace Rezervari
         DBConnect dbCon = new DBConnect();
         byte[] ImageData = null;
         public string IDCamera;
+        public bool DeschisDinRezervare;
         public Camere()
         {
             InitializeComponent();
@@ -32,13 +33,30 @@ namespace Rezervari
         }
         private void BindCamera()
         {
-            SqlCommand cmd = new SqlCommand("select * from Camere", dbCon.GetCon());
-            dbCon.OpenCon();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dbCon.CloseCon();
+            if (DeschisDinRezervare)
+            {
+                SqlCommand cmd = new SqlCommand("select * from Camere where IdCamera = @IdCamera", dbCon.GetCon());
+                cmd.Parameters.AddWithValue("@IdCamera", Convert.ToInt32(IDCamera));
+                dbCon.OpenCon();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dbCon.CloseCon();
+                btnAdauga.Visible = false;
+                btnSterge.Visible = false;
+                btnRenunta.Visible = false;
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("select * from Camere", dbCon.GetCon());
+                dbCon.OpenCon();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dbCon.CloseCon();
+            } 
         }
         private void txtClear()
         {
@@ -137,10 +155,20 @@ namespace Rezervari
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = true;
-            btnSterge.Visible = true;
-            btnRenunta.Visible = true;
-            btnAdauga.Visible = false;
+            if (DeschisDinRezervare)
+            {
+                btnActualizeaza.Visible = true;
+                btnSterge.Visible = false;
+                btnRenunta.Visible = false;
+                btnAdauga.Visible = false;
+            }
+            else
+            {
+                btnActualizeaza.Visible = true;
+                btnSterge.Visible = true;
+                btnRenunta.Visible = true;
+                btnAdauga.Visible = false;
+            }
             IDCamera = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             txtNrCamera.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             txtNrLocuri.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
@@ -193,6 +221,7 @@ namespace Rezervari
                     {
                         cmd = new SqlCommand("actalizareCamera", dbCon.GetCon());
                         cmd.Parameters.AddWithValue("@IdCamera", Convert.ToInt32(IDCamera));
+                        cmd.Parameters.AddWithValue("@NrCamera", Convert.ToInt32(txtNrCamera.Text));
                         cmd.Parameters.AddWithValue("@NrLocuri", Convert.ToInt32(txtNrLocuri.Text));
                         cmd.Parameters.AddWithValue("@Etaj", Convert.ToInt32(txtNrLocuri.Text));
                         cmd.Parameters.AddWithValue("@PretZi", Convert.ToDecimal(txtPretZi.Text));
@@ -276,6 +305,11 @@ namespace Rezervari
             pictureBox1.Image = null;
 
             dataGridView1.ClearSelection();
+        }
+
+        private void Camere_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

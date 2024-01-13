@@ -28,6 +28,7 @@ namespace Rezervari
             btnActualizeazaRezervare.Visible = false;
             btnStergeRezervare.Visible = false;
             btnRenunta.Visible = false;
+            btnDetaliiRezervare.Visible=false;
             btnAdaugaRezervare.Visible = true;
             BindRezervare();
             IncarcaDenumireClient();
@@ -44,7 +45,7 @@ namespace Rezervari
         }
         private void BindRezervareContinut()
         {
-            SqlCommand cmd = new SqlCommand("select r.IdRezervare,c.IdCamera as IdCamera_,r.Nrc,c.NrCamera,r.DataCazarii,c.PretZi,r.NrZile from RezervariContinut as r INNER JOIN Camere as c on r.IdCamera = c.IdCamera where r.IdRezervare = @IdRezervare", dbCon.GetCon());
+            SqlCommand cmd = new SqlCommand("select r.IdRezervare as IdRezervare_,c.IdCamera as IdCamera_,r.Nrc,c.NrCamera,r.DataCazarii,c.PretZi,r.NrZile from RezervariContinut as r INNER JOIN Camere as c on r.IdCamera = c.IdCamera where r.IdRezervare = @IdRezervare", dbCon.GetCon());
             dbCon.OpenCon();
             cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -107,6 +108,7 @@ namespace Rezervari
             btnActualizeazaRezervare.Visible = true;
             btnStergeRezervare.Visible = true;
             btnRenunta.Visible = true;
+            btnDetaliiRezervare.Visible = true;
             btnAdaugaRezervare.Visible = false;
             IdRezervare = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             IdClient = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
@@ -163,6 +165,7 @@ namespace Rezervari
                             btnStergeRezervare.Visible = false;
                             btnActualizeazaRezervare.Visible = false;
                             btnRenunta.Visible = false;
+                            btnDetaliiRezervare.Visible = false;
                             btnAdaugaRezervare.Visible = true;
                             dataGridView1.ClearSelection();
                         }
@@ -187,8 +190,9 @@ namespace Rezervari
             btnActualizeazaRezervare.Visible = false;
             btnStergeRezervare.Visible = false;
             btnRenunta.Visible = false;
+            btnDetaliiRezervare.Visible = false;
             btnAdaugaRezervare.Visible = true;
-
+            btnActualizeazaRezervare.Visible = false;
             IncarcaDenumireClient();
 
             dataGridView1.ClearSelection();
@@ -230,6 +234,19 @@ namespace Rezervari
                 BindRezervareContinut();
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Clienti clienti = new Clienti();
+            clienti.DeschisDinRezervare = true;
+            clienti.IDClient = IdClient;
+            clienti.ShowDialog();
+            if (clienti.DialogResult == DialogResult.OK)
+            {
+                BindRezervare();
+                IncarcaDenumireClient();
+            }
         }
     }
 }

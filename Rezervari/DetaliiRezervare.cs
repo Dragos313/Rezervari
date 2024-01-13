@@ -116,7 +116,7 @@ namespace Rezervari
             btnActualizeaza.Visible = true;
             btnSterge.Visible = true;
             btnAdauga.Visible = false;
-            btnRenunta.Visible = false;
+            btnRenunta.Visible = true;
             IdCamera = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             if (int.TryParse(IdCamera, out int cameraId))
             {
@@ -233,6 +233,24 @@ namespace Rezervari
         private void DetaliiRezervare_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnModificaCamera_Click(object sender, EventArgs e)
+        {
+            Camere camere = new Camere();
+            camere.DeschisDinRezervare = true;
+            camere.IDCamera = IdCamera;
+            camere.ShowDialog();
+            if (camere.DialogResult == DialogResult.OK)
+            {
+                BindRezervare();
+                IncarcaDenumireCamera();
+            }
+        }
+
+        private void cmbCamera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IdCamera = cmbCamera.SelectedValue.ToString();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Rezervari
     {
         DBConnect dbCon = new DBConnect();
         public string IDClient;
+        public bool DeschisDinRezervare;
         public Clienti()
         {
             InitializeComponent();
@@ -30,13 +31,30 @@ namespace Rezervari
         }
         private void BindClient()
         {
-            SqlCommand cmd = new SqlCommand("select * from Clienti", dbCon.GetCon());
-            dbCon.OpenCon();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dbCon.CloseCon();
+            if (DeschisDinRezervare)
+            {
+                SqlCommand cmd = new SqlCommand("select * from Clienti where IdClient = @IdClient", dbCon.GetCon());
+                cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IDClient));
+                dbCon.OpenCon();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dbCon.CloseCon();
+                btnAdauga.Visible = false;
+                btnSterge.Visible = false;
+                btnRenunta.Visible = false;
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("select * from Clienti", dbCon.GetCon());
+                dbCon.OpenCon();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dbCon.CloseCon();
+            }
         }
 
         private void btnAdauga_Click(object sender, EventArgs e)
@@ -239,10 +257,20 @@ namespace Rezervari
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = true;
-            btnSterge.Visible = true;
-            btnRenunta.Visible = true;
-            btnAdauga.Visible = false;
+            if (DeschisDinRezervare)
+            {
+                btnActualizeaza.Visible = true;
+                btnSterge.Visible = false;
+                btnRenunta.Visible = false;
+                btnAdauga.Visible = false;
+            }
+            else
+            {
+                btnActualizeaza.Visible = true;
+                btnSterge.Visible = true;
+                btnRenunta.Visible = true;
+                btnAdauga.Visible = false;
+            }
             IDClient = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             string fullName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             string[] nameParts = fullName.Split(' ');
@@ -271,6 +299,11 @@ namespace Rezervari
             txtNrTelefon.Text = "";
 
             dataGridView1.ClearSelection();
+        }
+
+        private void Clienti_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

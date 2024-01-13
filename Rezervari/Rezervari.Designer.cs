@@ -43,11 +43,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.IdCamera_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdRezervare_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +57,10 @@
             // btnRenunta
             // 
             this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenunta.Location = new System.Drawing.Point(694, 246);
+            this.btnRenunta.Location = new System.Drawing.Point(636, 169);
             this.btnRenunta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRenunta.Name = "btnRenunta";
-            this.btnRenunta.Size = new System.Drawing.Size(203, 42);
+            this.btnRenunta.Size = new System.Drawing.Size(191, 36);
             this.btnRenunta.TabIndex = 26;
             this.btnRenunta.Text = "Renunta";
             this.btnRenunta.UseVisualStyleBackColor = true;
@@ -67,10 +69,10 @@
             // btnStergeRezervare
             // 
             this.btnStergeRezervare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStergeRezervare.Location = new System.Drawing.Point(694, 184);
+            this.btnStergeRezervare.Location = new System.Drawing.Point(636, 129);
             this.btnStergeRezervare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStergeRezervare.Name = "btnStergeRezervare";
-            this.btnStergeRezervare.Size = new System.Drawing.Size(203, 42);
+            this.btnStergeRezervare.Size = new System.Drawing.Size(191, 36);
             this.btnStergeRezervare.TabIndex = 25;
             this.btnStergeRezervare.Text = "Sterge Rezervare";
             this.btnStergeRezervare.UseVisualStyleBackColor = true;
@@ -79,10 +81,10 @@
             // btnActualizeazaRezervare
             // 
             this.btnActualizeazaRezervare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizeazaRezervare.Location = new System.Drawing.Point(694, 123);
+            this.btnActualizeazaRezervare.Location = new System.Drawing.Point(636, 89);
             this.btnActualizeazaRezervare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizeazaRezervare.Name = "btnActualizeazaRezervare";
-            this.btnActualizeazaRezervare.Size = new System.Drawing.Size(203, 42);
+            this.btnActualizeazaRezervare.Size = new System.Drawing.Size(191, 36);
             this.btnActualizeazaRezervare.TabIndex = 24;
             this.btnActualizeazaRezervare.Text = "Actualizeaza Rezervare";
             this.btnActualizeazaRezervare.UseVisualStyleBackColor = true;
@@ -91,10 +93,10 @@
             // btnAdaugaRezervare
             // 
             this.btnAdaugaRezervare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdaugaRezervare.Location = new System.Drawing.Point(694, 65);
+            this.btnAdaugaRezervare.Location = new System.Drawing.Point(636, 49);
             this.btnAdaugaRezervare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdaugaRezervare.Name = "btnAdaugaRezervare";
-            this.btnAdaugaRezervare.Size = new System.Drawing.Size(203, 42);
+            this.btnAdaugaRezervare.Size = new System.Drawing.Size(191, 36);
             this.btnAdaugaRezervare.TabIndex = 23;
             this.btnAdaugaRezervare.Text = "Adauga Rezervare";
             this.btnAdaugaRezervare.UseVisualStyleBackColor = true;
@@ -116,7 +118,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(604, 303);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -162,17 +164,17 @@
             // 
             this.cmbCauta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCauta.FormattingEnabled = true;
-            this.cmbCauta.Location = new System.Drawing.Point(694, 12);
+            this.cmbCauta.Location = new System.Drawing.Point(636, 12);
             this.cmbCauta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCauta.Name = "cmbCauta";
-            this.cmbCauta.Size = new System.Drawing.Size(203, 33);
+            this.cmbCauta.Size = new System.Drawing.Size(191, 33);
             this.cmbCauta.TabIndex = 29;
             this.cmbCauta.SelectedIndexChanged += new System.EventHandler(this.cmbCauta_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(949, 11);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(859, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(26, 26);
@@ -184,10 +186,10 @@
             // btnDetaliiRezervare
             // 
             this.btnDetaliiRezervare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetaliiRezervare.Location = new System.Drawing.Point(694, 307);
+            this.btnDetaliiRezervare.Location = new System.Drawing.Point(636, 209);
             this.btnDetaliiRezervare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetaliiRezervare.Name = "btnDetaliiRezervare";
-            this.btnDetaliiRezervare.Size = new System.Drawing.Size(203, 42);
+            this.btnDetaliiRezervare.Size = new System.Drawing.Size(191, 36);
             this.btnDetaliiRezervare.TabIndex = 32;
             this.btnDetaliiRezervare.Text = "Detalii Rezervare";
             this.btnDetaliiRezervare.UseVisualStyleBackColor = true;
@@ -197,7 +199,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::Rezervari.Properties.Resources.search_interface_symbol;
-            this.button1.Location = new System.Drawing.Point(915, 11);
+            this.button1.Location = new System.Drawing.Point(832, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 26);
@@ -211,19 +213,20 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCamera_,
+            this.IdRezervare_,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 367);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 330);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(963, 333);
+            this.dataGridView2.Size = new System.Drawing.Size(905, 333);
             this.dataGridView2.TabIndex = 33;
             // 
             // IdCamera_
@@ -235,6 +238,16 @@
             this.IdCamera_.ReadOnly = true;
             this.IdCamera_.Visible = false;
             this.IdCamera_.Width = 150;
+            // 
+            // IdRezervare_
+            // 
+            this.IdRezervare_.DataPropertyName = "IdRezervare_";
+            this.IdRezervare_.HeaderText = "Column1";
+            this.IdRezervare_.MinimumWidth = 8;
+            this.IdRezervare_.Name = "IdRezervare_";
+            this.IdRezervare_.ReadOnly = true;
+            this.IdRezervare_.Visible = false;
+            this.IdRezervare_.Width = 150;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -281,11 +294,24 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(885, 11);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(26, 26);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Rezervari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 711);
+            this.ClientSize = new System.Drawing.Size(929, 674);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnDetaliiRezervare);
             this.Controls.Add(this.button2);
@@ -325,10 +351,12 @@
         private System.Windows.Forms.Button btnDetaliiRezervare;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCamera_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdRezervare_;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button button3;
     }
 }
