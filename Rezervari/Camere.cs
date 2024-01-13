@@ -223,7 +223,7 @@ namespace Rezervari
                         cmd.Parameters.AddWithValue("@IdCamera", Convert.ToInt32(IDCamera));
                         cmd.Parameters.AddWithValue("@NrCamera", Convert.ToInt32(txtNrCamera.Text));
                         cmd.Parameters.AddWithValue("@NrLocuri", Convert.ToInt32(txtNrLocuri.Text));
-                        cmd.Parameters.AddWithValue("@Etaj", Convert.ToInt32(txtNrLocuri.Text));
+                        cmd.Parameters.AddWithValue("@Etaj", Convert.ToInt32(txtEtaj.Text));
                         cmd.Parameters.AddWithValue("@PretZi", Convert.ToDecimal(txtPretZi.Text));
                         if (ImageData != null)
                         {
@@ -310,6 +310,13 @@ namespace Rezervari
         private void Camere_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            Imagine imagine = new Imagine();
+            imagine.IdCamera = IDCamera;
+            imagine.ShowDialog();
         }
     }
 }

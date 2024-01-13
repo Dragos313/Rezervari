@@ -71,6 +71,12 @@
     <Compile Include="FStart.Designer.cs">
       <DependentUpon>FStart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Imagine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imagine.Designer.cs">
+      <DependentUpon>Imagine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rezervari.cs">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FStart.resx">
       <DependentUpon>FStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagine.resx">
+      <DependentUpon>Imagine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

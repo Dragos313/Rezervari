@@ -53,30 +53,30 @@
             // cmbCamera
             // 
             this.cmbCamera.FormattingEnabled = true;
-            this.cmbCamera.Location = new System.Drawing.Point(135, 31);
+            this.cmbCamera.Location = new System.Drawing.Point(138, 30);
             this.cmbCamera.Name = "cmbCamera";
-            this.cmbCamera.Size = new System.Drawing.Size(193, 33);
+            this.cmbCamera.Size = new System.Drawing.Size(176, 33);
             this.cmbCamera.TabIndex = 0;
             this.cmbCamera.SelectedIndexChanged += new System.EventHandler(this.cmbCamera_SelectedIndexChanged);
             // 
             // dtpDataInceput
             // 
-            this.dtpDataInceput.Location = new System.Drawing.Point(97, 83);
+            this.dtpDataInceput.Location = new System.Drawing.Point(103, 82);
             this.dtpDataInceput.Name = "dtpDataInceput";
-            this.dtpDataInceput.Size = new System.Drawing.Size(231, 30);
+            this.dtpDataInceput.Size = new System.Drawing.Size(211, 30);
             this.dtpDataInceput.TabIndex = 2;
             // 
             // dtpDataSfarsit
             // 
-            this.dtpDataSfarsit.Location = new System.Drawing.Point(97, 130);
+            this.dtpDataSfarsit.Location = new System.Drawing.Point(103, 129);
             this.dtpDataSfarsit.Name = "dtpDataSfarsit";
-            this.dtpDataSfarsit.Size = new System.Drawing.Size(231, 30);
+            this.dtpDataSfarsit.Size = new System.Drawing.Size(211, 30);
             this.dtpDataSfarsit.TabIndex = 3;
             // 
             // btnRenunta
             // 
             this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenunta.Location = new System.Drawing.Point(11, 356);
+            this.btnRenunta.Location = new System.Drawing.Point(12, 354);
             this.btnRenunta.Name = "btnRenunta";
             this.btnRenunta.Size = new System.Drawing.Size(134, 38);
             this.btnRenunta.TabIndex = 26;
@@ -87,7 +87,7 @@
             // btnSterge
             // 
             this.btnSterge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSterge.Location = new System.Drawing.Point(11, 301);
+            this.btnSterge.Location = new System.Drawing.Point(12, 299);
             this.btnSterge.Name = "btnSterge";
             this.btnSterge.Size = new System.Drawing.Size(134, 38);
             this.btnSterge.TabIndex = 25;
@@ -98,7 +98,7 @@
             // btnActualizeaza
             // 
             this.btnActualizeaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizeaza.Location = new System.Drawing.Point(11, 247);
+            this.btnActualizeaza.Location = new System.Drawing.Point(12, 245);
             this.btnActualizeaza.Name = "btnActualizeaza";
             this.btnActualizeaza.Size = new System.Drawing.Size(134, 38);
             this.btnActualizeaza.TabIndex = 24;
@@ -109,7 +109,7 @@
             // btnAdauga
             // 
             this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdauga.Location = new System.Drawing.Point(11, 193);
+            this.btnAdauga.Location = new System.Drawing.Point(12, 191);
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(134, 38);
             this.btnAdauga.TabIndex = 23;
@@ -129,14 +129,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.Location = new System.Drawing.Point(334, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(320, 28);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(760, 376);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -144,7 +144,7 @@
             // 
             this.lblNrCamera.AutoSize = true;
             this.lblNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNrCamera.Location = new System.Drawing.Point(6, 34);
+            this.lblNrCamera.Location = new System.Drawing.Point(7, 33);
             this.lblNrCamera.Name = "lblNrCamera";
             this.lblNrCamera.Size = new System.Drawing.Size(107, 25);
             this.lblNrCamera.TabIndex = 30;
@@ -154,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 83);
+            this.label1.Location = new System.Drawing.Point(7, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 25);
             this.label1.TabIndex = 31;
@@ -164,7 +164,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 135);
+            this.label2.Location = new System.Drawing.Point(7, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 32;
@@ -238,7 +238,7 @@
             // btnModificaCamera
             // 
             this.btnModificaCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificaCamera.Location = new System.Drawing.Point(101, 29);
+            this.btnModificaCamera.Location = new System.Drawing.Point(104, 28);
             this.btnModificaCamera.Name = "btnModificaCamera";
             this.btnModificaCamera.Size = new System.Drawing.Size(31, 27);
             this.btnModificaCamera.TabIndex = 33;
@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 418);
+            this.ClientSize = new System.Drawing.Size(1092, 418);
             this.Controls.Add(this.btnModificaCamera);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
