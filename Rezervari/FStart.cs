@@ -77,7 +77,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Se pare ca a aparut o problema");
                 return false;
             }
         }
@@ -101,6 +101,12 @@ namespace Rezervari
         {
             Camere camere = new Camere();
             camere.Show();
+        }
+
+        private void rezervariToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rezervari rezervari = new Rezervari();
+            rezervari.Show();
         }
     }
 }

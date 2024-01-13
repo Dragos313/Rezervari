@@ -127,20 +127,21 @@
             // rezervariToolStripMenuItem
             // 
             this.rezervariToolStripMenuItem.Name = "rezervariToolStripMenuItem";
-            this.rezervariToolStripMenuItem.Size = new System.Drawing.Size(107, 34);
+            this.rezervariToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
             this.rezervariToolStripMenuItem.Text = "Rezervari";
+            this.rezervariToolStripMenuItem.Click += new System.EventHandler(this.rezervariToolStripMenuItem_Click);
             // 
             // camereToolStripMenuItem
             // 
             this.camereToolStripMenuItem.Name = "camereToolStripMenuItem";
-            this.camereToolStripMenuItem.Size = new System.Drawing.Size(94, 34);
+            this.camereToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
             this.camereToolStripMenuItem.Text = "Camere";
             this.camereToolStripMenuItem.Click += new System.EventHandler(this.camereToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
             this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
-            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(83, 34);
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
             this.clientiToolStripMenuItem.Text = "Clienti";
             this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
             // 
