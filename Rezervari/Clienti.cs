@@ -272,6 +272,5 @@ namespace Rezervari
 
             dataGridView1.ClearSelection();
         }
-       
     }
 }

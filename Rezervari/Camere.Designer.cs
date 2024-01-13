@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Etaj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PretZi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SpImagine = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnRenunta = new System.Windows.Forms.Button();
             this.txtNrLocuri = new System.Windows.Forms.TextBox();
             this.lblNrLocuri = new System.Windows.Forms.Label();
@@ -39,12 +46,6 @@
             this.btnSterge = new System.Windows.Forms.Button();
             this.btnActualizeaza = new System.Windows.Forms.Button();
             this.btnAdauga = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NrTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Etaj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PretZi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SpImagine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblImagine = new System.Windows.Forms.Label();
             this.txtPretZi = new System.Windows.Forms.TextBox();
             this.lblPretZi = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -64,99 +66,23 @@
             this.Etaj,
             this.PretZi,
             this.SpImagine});
-            this.dataGridView1.Location = new System.Drawing.Point(375, 12);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Location = new System.Drawing.Point(426, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(972, 463);
+            this.dataGridView1.Size = new System.Drawing.Size(1069, 528);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // btnRenunta
-            // 
-            this.btnRenunta.Location = new System.Drawing.Point(12, 399);
-            this.btnRenunta.Name = "btnRenunta";
-            this.btnRenunta.Size = new System.Drawing.Size(138, 43);
-            this.btnRenunta.TabIndex = 22;
-            this.btnRenunta.Text = "Renunta";
-            this.btnRenunta.UseVisualStyleBackColor = true;
-            // 
-            // txtNrLocuri
-            // 
-            this.txtNrLocuri.Location = new System.Drawing.Point(110, 56);
-            this.txtNrLocuri.Name = "txtNrLocuri";
-            this.txtNrLocuri.Size = new System.Drawing.Size(208, 26);
-            this.txtNrLocuri.TabIndex = 21;
-            // 
-            // lblNrLocuri
-            // 
-            this.lblNrLocuri.AutoSize = true;
-            this.lblNrLocuri.Location = new System.Drawing.Point(11, 61);
-            this.lblNrLocuri.Name = "lblNrLocuri";
-            this.lblNrLocuri.Size = new System.Drawing.Size(72, 20);
-            this.lblNrLocuri.TabIndex = 20;
-            this.lblNrLocuri.Text = "Nr Locuri";
-            // 
-            // txtEtaj
-            // 
-            this.txtEtaj.Location = new System.Drawing.Point(110, 100);
-            this.txtEtaj.Name = "txtEtaj";
-            this.txtEtaj.Size = new System.Drawing.Size(208, 26);
-            this.txtEtaj.TabIndex = 19;
-            // 
-            // lblEtaj
-            // 
-            this.lblEtaj.AutoSize = true;
-            this.lblEtaj.Location = new System.Drawing.Point(11, 105);
-            this.lblEtaj.Name = "lblEtaj";
-            this.lblEtaj.Size = new System.Drawing.Size(37, 20);
-            this.lblEtaj.TabIndex = 18;
-            this.lblEtaj.Text = "Etaj";
-            // 
-            // txtNrCamera
-            // 
-            this.txtNrCamera.Location = new System.Drawing.Point(110, 12);
-            this.txtNrCamera.Name = "txtNrCamera";
-            this.txtNrCamera.Size = new System.Drawing.Size(208, 26);
-            this.txtNrCamera.TabIndex = 17;
-            // 
-            // lblNrCamera
-            // 
-            this.lblNrCamera.AutoSize = true;
-            this.lblNrCamera.Location = new System.Drawing.Point(11, 17);
-            this.lblNrCamera.Name = "lblNrCamera";
-            this.lblNrCamera.Size = new System.Drawing.Size(85, 20);
-            this.lblNrCamera.TabIndex = 16;
-            this.lblNrCamera.Text = "Nr Camera";
-            // 
-            // btnSterge
-            // 
-            this.btnSterge.Location = new System.Drawing.Point(11, 348);
-            this.btnSterge.Name = "btnSterge";
-            this.btnSterge.Size = new System.Drawing.Size(138, 43);
-            this.btnSterge.TabIndex = 15;
-            this.btnSterge.Text = "Stergere";
-            this.btnSterge.UseVisualStyleBackColor = true;
-            // 
-            // btnActualizeaza
-            // 
-            this.btnActualizeaza.Location = new System.Drawing.Point(11, 297);
-            this.btnActualizeaza.Name = "btnActualizeaza";
-            this.btnActualizeaza.Size = new System.Drawing.Size(138, 43);
-            this.btnActualizeaza.TabIndex = 14;
-            this.btnActualizeaza.Text = "Actualizeaza";
-            this.btnActualizeaza.UseVisualStyleBackColor = true;
-            // 
-            // btnAdauga
-            // 
-            this.btnAdauga.Location = new System.Drawing.Point(12, 247);
-            this.btnAdauga.Name = "btnAdauga";
-            this.btnAdauga.Size = new System.Drawing.Size(138, 43);
-            this.btnAdauga.TabIndex = 13;
-            this.btnAdauga.Text = "Adaugare";
-            this.btnAdauga.UseVisualStyleBackColor = true;
-            this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // ID
             // 
@@ -211,48 +137,152 @@
             this.SpImagine.MinimumWidth = 6;
             this.SpImagine.Name = "SpImagine";
             this.SpImagine.ReadOnly = true;
+            this.SpImagine.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SpImagine.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.SpImagine.Width = 125;
+            // 
+            // btnRenunta
+            // 
+            this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRenunta.Location = new System.Drawing.Point(12, 444);
+            this.btnRenunta.Name = "btnRenunta";
+            this.btnRenunta.Size = new System.Drawing.Size(153, 50);
+            this.btnRenunta.TabIndex = 22;
+            this.btnRenunta.Text = "Renunta";
+            this.btnRenunta.UseVisualStyleBackColor = true;
+            this.btnRenunta.Click += new System.EventHandler(this.btnRenunta_Click);
+            // 
+            // txtNrLocuri
+            // 
+            this.txtNrLocuri.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNrLocuri.Location = new System.Drawing.Point(136, 66);
+            this.txtNrLocuri.Name = "txtNrLocuri";
+            this.txtNrLocuri.Size = new System.Drawing.Size(228, 30);
+            this.txtNrLocuri.TabIndex = 21;
+            // 
+            // lblNrLocuri
+            // 
+            this.lblNrLocuri.AutoSize = true;
+            this.lblNrLocuri.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNrLocuri.Location = new System.Drawing.Point(14, 71);
+            this.lblNrLocuri.Name = "lblNrLocuri";
+            this.lblNrLocuri.Size = new System.Drawing.Size(90, 25);
+            this.lblNrLocuri.TabIndex = 20;
+            this.lblNrLocuri.Text = "Nr Locuri";
+            // 
+            // txtEtaj
+            // 
+            this.txtEtaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEtaj.Location = new System.Drawing.Point(136, 119);
+            this.txtEtaj.Name = "txtEtaj";
+            this.txtEtaj.Size = new System.Drawing.Size(228, 30);
+            this.txtEtaj.TabIndex = 19;
+            // 
+            // lblEtaj
+            // 
+            this.lblEtaj.AutoSize = true;
+            this.lblEtaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEtaj.Location = new System.Drawing.Point(14, 119);
+            this.lblEtaj.Name = "lblEtaj";
+            this.lblEtaj.Size = new System.Drawing.Size(45, 25);
+            this.lblEtaj.TabIndex = 18;
+            this.lblEtaj.Text = "Etaj";
+            // 
+            // txtNrCamera
+            // 
+            this.txtNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNrCamera.Location = new System.Drawing.Point(136, 14);
+            this.txtNrCamera.Name = "txtNrCamera";
+            this.txtNrCamera.Size = new System.Drawing.Size(228, 30);
+            this.txtNrCamera.TabIndex = 17;
+            // 
+            // lblNrCamera
+            // 
+            this.lblNrCamera.AutoSize = true;
+            this.lblNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNrCamera.Location = new System.Drawing.Point(11, 17);
+            this.lblNrCamera.Name = "lblNrCamera";
+            this.lblNrCamera.Size = new System.Drawing.Size(107, 25);
+            this.lblNrCamera.TabIndex = 16;
+            this.lblNrCamera.Text = "Nr Camera";
+            // 
+            // btnSterge
+            // 
+            this.btnSterge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSterge.Location = new System.Drawing.Point(12, 388);
+            this.btnSterge.Name = "btnSterge";
+            this.btnSterge.Size = new System.Drawing.Size(153, 50);
+            this.btnSterge.TabIndex = 15;
+            this.btnSterge.Text = "Stergere";
+            this.btnSterge.UseVisualStyleBackColor = true;
+            this.btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
+            // 
+            // btnActualizeaza
+            // 
+            this.btnActualizeaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizeaza.Location = new System.Drawing.Point(12, 332);
+            this.btnActualizeaza.Name = "btnActualizeaza";
+            this.btnActualizeaza.Size = new System.Drawing.Size(153, 50);
+            this.btnActualizeaza.TabIndex = 14;
+            this.btnActualizeaza.Text = "Actualizeaza";
+            this.btnActualizeaza.UseVisualStyleBackColor = true;
+            this.btnActualizeaza.Click += new System.EventHandler(this.btnActualizeaza_Click);
+            // 
+            // btnAdauga
+            // 
+            this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdauga.Location = new System.Drawing.Point(12, 276);
+            this.btnAdauga.Name = "btnAdauga";
+            this.btnAdauga.Size = new System.Drawing.Size(153, 50);
+            this.btnAdauga.TabIndex = 13;
+            this.btnAdauga.Text = "Adaugare";
+            this.btnAdauga.UseVisualStyleBackColor = true;
+            this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
             // lblImagine
             // 
             this.lblImagine.AutoSize = true;
-            this.lblImagine.Location = new System.Drawing.Point(11, 194);
+            this.lblImagine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagine.Location = new System.Drawing.Point(14, 226);
             this.lblImagine.Name = "lblImagine";
-            this.lblImagine.Size = new System.Drawing.Size(90, 20);
+            this.lblImagine.Size = new System.Drawing.Size(111, 25);
             this.lblImagine.TabIndex = 27;
             this.lblImagine.Text = "Sp Imagine";
             // 
             // txtPretZi
             // 
-            this.txtPretZi.Location = new System.Drawing.Point(110, 145);
+            this.txtPretZi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPretZi.Location = new System.Drawing.Point(136, 171);
             this.txtPretZi.Name = "txtPretZi";
-            this.txtPretZi.Size = new System.Drawing.Size(208, 26);
+            this.txtPretZi.Size = new System.Drawing.Size(228, 30);
             this.txtPretZi.TabIndex = 24;
             // 
             // lblPretZi
             // 
             this.lblPretZi.AutoSize = true;
-            this.lblPretZi.Location = new System.Drawing.Point(11, 150);
+            this.lblPretZi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPretZi.Location = new System.Drawing.Point(14, 171);
             this.lblPretZi.Name = "lblPretZi";
-            this.lblPretZi.Size = new System.Drawing.Size(55, 20);
+            this.lblPretZi.Size = new System.Drawing.Size(68, 25);
             this.lblPretZi.TabIndex = 23;
             this.lblPretZi.Text = "Pret Zi";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(171, 192);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 221);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 250);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 319);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(112, 192);
+            this.button1.Location = new System.Drawing.Point(131, 221);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 26);
+            this.button1.Size = new System.Drawing.Size(50, 34);
             this.button1.TabIndex = 30;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
@@ -262,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 561);
+            this.ClientSize = new System.Drawing.Size(1507, 566);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblImagine);
@@ -280,6 +310,7 @@
             this.Controls.Add(this.btnAdauga);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Camere";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Camere";
             this.Load += new System.EventHandler(this.Camere_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -292,12 +323,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Etaj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PretZi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SpImagine;
         private System.Windows.Forms.Button btnRenunta;
         private System.Windows.Forms.TextBox txtNrLocuri;
         private System.Windows.Forms.Label lblNrLocuri;
@@ -313,5 +338,11 @@
         private System.Windows.Forms.Label lblPretZi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Etaj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PretZi;
+        private System.Windows.Forms.DataGridViewImageColumn SpImagine;
     }
 }
