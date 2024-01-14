@@ -77,7 +77,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se pare ca a aparut o problema");
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

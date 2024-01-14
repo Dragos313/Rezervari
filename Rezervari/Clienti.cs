@@ -126,7 +126,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void txtClear()
@@ -209,7 +209,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnSterge_Click(object sender, EventArgs e)
@@ -225,24 +225,34 @@ namespace Rezervari
                 {
                     if (DialogResult.Yes == MessageBox.Show("Vrei sa stergi acest client?", "Confirmare", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                     {
-                        SqlCommand cmd = new SqlCommand("stergeClient", dbCon.GetCon());
+                        SqlCommand cmd = new SqlCommand("select top 1 * from Rezervari where IdClient=@IdClient", dbCon.GetCon());
                         cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IDClient));
-                        cmd.CommandType = CommandType.StoredProcedure;
                         dbCon.OpenCon();
-                        int i = cmd.ExecuteNonQuery();
-                        if (i > 0)
+                        var result = cmd.ExecuteScalar();
+                        if (result != null)
                         {
-                            MessageBox.Show("Partener sters", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtClear();
-                            BindClient();
-                            btnActualizeaza.Visible = false;
-                            btnSterge.Visible = false;
-                            btnAdauga.Visible = true;
+                            MessageBox.Show("Nu puteti sterge acest client deoarece se afla intr-o rezervare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtClear();
+                            cmd = new SqlCommand("stergeClient", dbCon.GetCon());
+                            cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IDClient));
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            int i = cmd.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                MessageBox.Show("Client sters", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtClear();
+                                BindClient();
+                                btnActualizeaza.Visible = false;
+                                btnSterge.Visible = false;
+                                btnAdauga.Visible = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtClear();
+                            }
                         }
                         dbCon.CloseCon();
                     }
@@ -251,7 +261,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

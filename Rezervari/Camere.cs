@@ -90,7 +90,7 @@ namespace Rezervari
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -149,7 +149,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -244,7 +244,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -261,25 +261,35 @@ namespace Rezervari
                 {
                     if (DialogResult.Yes == MessageBox.Show("Vrei sa stergi aceasta camera?", "Confirmare", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                     {
-                        SqlCommand cmd = new SqlCommand("stergeCamera", dbCon.GetCon());
+                        SqlCommand cmd = new SqlCommand("select top 1 * from RezervariContinut where IdCamera=@IdCamera", dbCon.GetCon());
                         cmd.Parameters.AddWithValue("@IdCamera", Convert.ToInt32(IDCamera));
-                        cmd.CommandType = CommandType.StoredProcedure;
                         dbCon.OpenCon();
-                        int i = cmd.ExecuteNonQuery();
-                        if (i > 0)
+                        var result = cmd.ExecuteScalar();
+                        if (result != null)
                         {
-                            MessageBox.Show("Camera stearsa", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtClear();
-                            BindCamera();
-                            btnActualizeaza.Visible = false;
-                            btnSterge.Visible = false;
-                            btnAdauga.Visible = true;
+                            MessageBox.Show("Nu puteti sterge aceasta camera deoarece este continuta intr-o rezervare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            txtClear();
-                        }
+                            cmd = new SqlCommand("stergeCamera", dbCon.GetCon());
+                            cmd.Parameters.AddWithValue("@IdCamera", Convert.ToInt32(IDCamera));
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            int i = cmd.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                MessageBox.Show("Camera stearsa", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtClear();
+                                BindCamera();
+                                btnActualizeaza.Visible = false;
+                                btnSterge.Visible = false;
+                                btnAdauga.Visible = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtClear();
+                            }
+                        }                       
                         dbCon.CloseCon();
                     }
 
@@ -287,7 +297,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

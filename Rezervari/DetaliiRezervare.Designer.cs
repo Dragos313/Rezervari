@@ -36,9 +36,6 @@
             this.btnActualizeaza = new System.Windows.Forms.Button();
             this.btnAdauga = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblNrCamera = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.IdRezervare = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCamera_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +43,16 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNrCamera = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnModificaCamera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCamera
             // 
+            this.cmbCamera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCamera.FormattingEnabled = true;
             this.cmbCamera.Location = new System.Drawing.Point(138, 30);
             this.cmbCamera.Name = "cmbCamera";
@@ -140,36 +141,6 @@
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
-            // lblNrCamera
-            // 
-            this.lblNrCamera.AutoSize = true;
-            this.lblNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNrCamera.Location = new System.Drawing.Point(7, 33);
-            this.lblNrCamera.Name = "lblNrCamera";
-            this.lblNrCamera.Size = new System.Drawing.Size(107, 25);
-            this.lblNrCamera.TabIndex = 30;
-            this.lblNrCamera.Text = "Nr Camera";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 25);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "De la";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Pana la";
-            // 
             // IdRezervare
             // 
             this.IdRezervare.DataPropertyName = "IdRezervare";
@@ -235,6 +206,36 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // lblNrCamera
+            // 
+            this.lblNrCamera.AutoSize = true;
+            this.lblNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNrCamera.Location = new System.Drawing.Point(7, 33);
+            this.lblNrCamera.Name = "lblNrCamera";
+            this.lblNrCamera.Size = new System.Drawing.Size(107, 25);
+            this.lblNrCamera.TabIndex = 30;
+            this.lblNrCamera.Text = "Nr Camera";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "De la";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 25);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Pana la";
+            // 
             // btnModificaCamera
             // 
             this.btnModificaCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,7 +265,7 @@
             this.Controls.Add(this.dtpDataInceput);
             this.Controls.Add(this.cmbCamera);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DetaliiRezervare";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetaliiRezervare";

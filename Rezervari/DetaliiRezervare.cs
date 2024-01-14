@@ -101,7 +101,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void txtClear()
@@ -174,7 +174,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -214,7 +214,7 @@ namespace Rezervari
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

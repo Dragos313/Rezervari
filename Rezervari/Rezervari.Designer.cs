@@ -33,10 +33,6 @@
             this.btnActualizeazaRezervare = new System.Windows.Forms.Button();
             this.btnAdaugaRezervare = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NrTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeClientt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCauta = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDetaliiRezervare = new System.Windows.Forms.Button();
@@ -50,6 +46,10 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrTelefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeClientt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             this.btnActualizeazaRezervare.Name = "btnActualizeazaRezervare";
             this.btnActualizeazaRezervare.Size = new System.Drawing.Size(191, 36);
             this.btnActualizeazaRezervare.TabIndex = 24;
-            this.btnActualizeazaRezervare.Text = "Actualizeaza Rezervare";
+            this.btnActualizeazaRezervare.Text = "Actualizeaza Client";
             this.btnActualizeazaRezervare.UseVisualStyleBackColor = true;
             this.btnActualizeazaRezervare.Click += new System.EventHandler(this.btnActualizeazaRezervare_Click);
             // 
@@ -118,50 +118,13 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(604, 302);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "IdRezervare";
-            this.ID.HeaderText = "Column1";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 125;
-            // 
-            // NrTelefon
-            // 
-            this.NrTelefon.DataPropertyName = "DataRezervarii";
-            this.NrTelefon.HeaderText = "Data Rezervarii";
-            this.NrTelefon.MinimumWidth = 6;
-            this.NrTelefon.Name = "NrTelefon";
-            this.NrTelefon.ReadOnly = true;
-            this.NrTelefon.Width = 125;
-            // 
-            // NumeClient
-            // 
-            this.NumeClient.DataPropertyName = "IdClient";
-            this.NumeClient.HeaderText = "Id Client";
-            this.NumeClient.MinimumWidth = 6;
-            this.NumeClient.Name = "NumeClient";
-            this.NumeClient.ReadOnly = true;
-            this.NumeClient.Visible = false;
-            this.NumeClient.Width = 125;
-            // 
-            // NumeClientt
-            // 
-            this.NumeClientt.DataPropertyName = "NumeClient";
-            this.NumeClientt.HeaderText = "Nume Client";
-            this.NumeClientt.MinimumWidth = 8;
-            this.NumeClientt.Name = "NumeClientt";
-            this.NumeClientt.ReadOnly = true;
-            this.NumeClientt.Width = 150;
-            // 
             // cmbCauta
             // 
+            this.cmbCauta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCauta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCauta.FormattingEnabled = true;
             this.cmbCauta.Location = new System.Drawing.Point(636, 12);
@@ -219,14 +182,14 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 330);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 328);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(905, 333);
+            this.dataGridView2.Size = new System.Drawing.Size(899, 278);
             this.dataGridView2.TabIndex = 33;
             // 
             // IdCamera_
@@ -306,11 +269,49 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "IdRezervare";
+            this.ID.HeaderText = "Id Rezervare";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 125;
+            // 
+            // NrTelefon
+            // 
+            this.NrTelefon.DataPropertyName = "DataRezervarii";
+            this.NrTelefon.HeaderText = "Data Rezervarii";
+            this.NrTelefon.MinimumWidth = 6;
+            this.NrTelefon.Name = "NrTelefon";
+            this.NrTelefon.ReadOnly = true;
+            this.NrTelefon.Width = 125;
+            // 
+            // NumeClient
+            // 
+            this.NumeClient.DataPropertyName = "IdClient";
+            this.NumeClient.HeaderText = "Id Client";
+            this.NumeClient.MinimumWidth = 6;
+            this.NumeClient.Name = "NumeClient";
+            this.NumeClient.ReadOnly = true;
+            this.NumeClient.Visible = false;
+            this.NumeClient.Width = 125;
+            // 
+            // NumeClientt
+            // 
+            this.NumeClientt.DataPropertyName = "NumeClient";
+            this.NumeClientt.HeaderText = "Nume Client";
+            this.NumeClientt.MinimumWidth = 8;
+            this.NumeClientt.Name = "NumeClientt";
+            this.NumeClientt.ReadOnly = true;
+            this.NumeClientt.Width = 150;
+            // 
             // Rezervari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 674);
+            this.ClientSize = new System.Drawing.Size(918, 618);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnDetaliiRezervare);
@@ -342,10 +343,6 @@
         private System.Windows.Forms.Button btnAdaugaRezervare;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbCauta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClientt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDetaliiRezervare;
@@ -358,5 +355,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeClientt;
     }
 }
