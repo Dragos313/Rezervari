@@ -25,11 +25,6 @@ namespace Rezervari
 
         private void Rezervari_Load(object sender, EventArgs e)
         {
-            btnActualizeazaRezervare.Visible = false;
-            btnStergeRezervare.Visible = false;
-            btnRenunta.Visible = false;
-            btnDetaliiRezervare.Visible=false;
-            btnAdaugaRezervare.Visible = true;
             BindRezervare();
             IncarcaDenumireClient();
         }
@@ -45,7 +40,7 @@ namespace Rezervari
         }
         private void BindRezervareContinut()
         {
-            SqlCommand cmd = new SqlCommand("select r.IdRezervare as IdRezervare_,c.IdCamera as IdCamera_,r.Nrc,c.NrCamera,r.DataCazarii,c.PretZi,r.NrZile from RezervariContinut as r INNER JOIN Camere as c on r.IdCamera = c.IdCamera where r.IdRezervare = @IdRezervare", dbCon.GetCon());
+            SqlCommand cmd = new SqlCommand("select r.IdRezervare as IdRezervare_,c.IdCamera as IdCamera_,r.Nrc,c.NrCamera,r.DataCazarii,c.PretZi,r.NrZile from RezervariContinut as r INNER JOIN Camere as c on r.IdCamera = c.IdCamera where r.IdRezervare = @IdRezervare order by r.Nrc asc", dbCon.GetCon());
             dbCon.OpenCon();
             cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -62,14 +57,16 @@ namespace Rezervari
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
+            DataRow newRow = dt.NewRow();
+            newRow["IdClient"] = 0;
+            newRow["NumeClient"] = "---";
+            dt.Rows.InsertAt(newRow, 0);
+
             cmbCauta.DataSource = dt;
             cmbCauta.DisplayMember = "NumeClient";
             cmbCauta.ValueMember = "IdClient";
-            if (cmbCauta.SelectedValue != null)
-            {
-                IdClient = cmbCauta.SelectedValue.ToString();
-                NumeClient_ = cmbCauta.Text;
-            }
+
             dbCon.CloseCon();
         }
 
@@ -77,18 +74,24 @@ namespace Rezervari
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("adaugareRezervare", dbCon.GetCon());
-                dbCon.OpenCon();
-                cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IdClient));
-                cmd.Parameters.AddWithValue("@DataRezervarii", DateTime.Now);
-                cmd.CommandType = CommandType.StoredProcedure;
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
+                if (Convert.ToInt32(cmbCauta.SelectedValue) == 0)
                 {
-                    MessageBox.Show("Rezervarea a fost adaugata cu succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    BindRezervare();
+                    MessageBox.Show("Selectati un turist", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("adaugareRezervare", dbCon.GetCon());
+                    dbCon.OpenCon();
+                    cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IdClient));
+                    cmd.Parameters.AddWithValue("@DataRezervarii", DateTime.Now);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    int i = cmd.ExecuteNonQuery();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Rezervarea a fost adaugata cu succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        BindRezervare();
+                    }
+                }
                 dbCon.CloseCon();
             }
             catch (Exception ex)
@@ -105,11 +108,6 @@ namespace Rezervari
 
         private void dataGridView1_Click(object sender, EventArgs e)
         {
-            btnActualizeazaRezervare.Visible = true;
-            btnStergeRezervare.Visible = true;
-            btnRenunta.Visible = true;
-            btnDetaliiRezervare.Visible = true;
-            btnAdaugaRezervare.Visible = false;
             IdRezervare = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             IdClient = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             if (int.TryParse(IdClient, out int clientId))
@@ -120,107 +118,73 @@ namespace Rezervari
             BindRezervareContinut();
         }
 
-        private void btnActualizeazaRezervare_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand("actualizareRezervare", dbCon.GetCon());
-                dbCon.OpenCon();
-                cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
-                cmd.Parameters.AddWithValue("@IdClient", Convert.ToInt32(IdClient));
-                cmd.CommandType = CommandType.StoredProcedure;
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    MessageBox.Show("Rezervarea a fost modificata cu succes", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    BindRezervare();
-                }
-
-                dbCon.CloseCon();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnStergeRezervare_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.SelectedRows.Count > 0)
-                { 
-                    if (DialogResult.Yes == MessageBox.Show("Vrei sa stergi aceasta rezervare?", "Confirmare", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
-                    {
-                        SqlCommand cmd = new SqlCommand("select top 1 * from RezervariContinut where IdRezervare=@IdRezervare", dbCon.GetCon());
-                        cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
-                        dbCon.OpenCon();
-                        var result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            MessageBox.Show("Nu puteti sterge aceasta rezervare deoarece are continutul completat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else 
-                        {
-                            cmd = new SqlCommand("stergeRezervare", dbCon.GetCon());
-                            cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            int i = cmd.ExecuteNonQuery();
-                            if (i > 0)
-                            {
-                                MessageBox.Show("Rezervare stearsa", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                IncarcaDenumireClient();
-                                BindRezervare();
-                                btnStergeRezervare.Visible = false;
-                                btnActualizeazaRezervare.Visible = false;
-                                btnRenunta.Visible = false;
-                                btnDetaliiRezervare.Visible = false;
-                                btnAdaugaRezervare.Visible = true;
-                                dataGridView1.ClearSelection();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                IncarcaDenumireClient();
-                            }
-                        }
-                        dbCon.CloseCon();
-                    }
-
+                if (Convert.ToInt32(IdRezervare) == 0)
+                {
+                    MessageBox.Show("Selectati o rezervare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else {
+                    SqlCommand cmd = new SqlCommand("select top 1 * from RezervariContinut where IdRezervare=@IdRezervare", dbCon.GetCon());
+                    cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
+                    dbCon.OpenCon();
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        MessageBox.Show("Nu puteti sterge aceasta rezervare deoarece are continutul completat.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        cmd = new SqlCommand("stergeRezervare", dbCon.GetCon());
+                        cmd.Parameters.AddWithValue("@IdRezervare", Convert.ToInt32(IdRezervare));
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        int i = cmd.ExecuteNonQuery();
+                        if (i > 0)
+                        {
+                            MessageBox.Show("Rezervare stearsa", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            IncarcaDenumireClient();
+                            BindRezervare();
+                            dataGridView1.ClearSelection();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Stergerea nu s-a finalizat", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            IncarcaDenumireClient();
+                        }
+                    }
+                    dbCon.CloseCon();
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Se pare ca a aparut o eroare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnRenunta_Click(object sender, EventArgs e)
-        {
-            btnActualizeazaRezervare.Visible = false;
-            btnStergeRezervare.Visible = false;
-            btnRenunta.Visible = false;
-            btnDetaliiRezervare.Visible = false;
-            btnAdaugaRezervare.Visible = true;
-            btnActualizeazaRezervare.Visible = false;
-            IncarcaDenumireClient();
-
-            dataGridView1.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("getRezervari_DupaNume", dbCon.GetCon());
-                cmd.Parameters.AddWithValue("@IdClient", cmbCauta.SelectedValue);
-                cmd.CommandType = CommandType.StoredProcedure;
-                dbCon.OpenCon();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dbCon.CloseCon();
+                if (Convert.ToInt32(cmbCauta.SelectedValue) == 0)
+                {
+                    MessageBox.Show("Selectati un turist", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else 
+                { 
+                    SqlCommand cmd = new SqlCommand("getRezervari_DupaNume", dbCon.GetCon());
+                    cmd.Parameters.AddWithValue("@IdClient", cmbCauta.SelectedValue);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    dbCon.OpenCon();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    dbCon.CloseCon();
+                }
+
             }
             catch (Exception ex)
             {
@@ -236,27 +200,42 @@ namespace Rezervari
 
         private void btnDetaliiRezervare_Click(object sender, EventArgs e)
         {
-            DetaliiRezervare detaliiRezervare = new DetaliiRezervare();
-            detaliiRezervare.IdRezervare_ = IdRezervare;
-            detaliiRezervare.ShowDialog();
-            if (detaliiRezervare.DialogResult == DialogResult.OK)
+            if (Convert.ToInt32(IdRezervare) == 0)
             {
-                BindRezervareContinut();
+                MessageBox.Show("Selectati o rezervare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            else 
+            {
+                DetaliiRezervare detaliiRezervare = new DetaliiRezervare();
+                detaliiRezervare.IdRezervare_ = IdRezervare;
+                detaliiRezervare.ShowDialog();
+                if (detaliiRezervare.DialogResult == DialogResult.OK)
+                {
+                    BindRezervareContinut();
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Clienti clienti = new Clienti();
-            clienti.DeschisDinRezervare = true;
-            clienti.IDClient = IdClient;
-            clienti.ShowDialog();
-            if (clienti.DialogResult == DialogResult.OK)
+            if (Convert.ToInt32(cmbCauta.SelectedValue) == 0)
             {
-                BindRezervare();
-                IncarcaDenumireClient();
+                MessageBox.Show("Selectati un turist", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else 
+            {
+                Clienti clienti = new Clienti();
+                clienti.DeschisDinRezervare = true;
+                clienti.IDClient = IdClient;
+                clienti.ShowDialog();
+                if (clienti.DialogResult == DialogResult.OK)
+                {
+                    BindRezervare();
+                    IncarcaDenumireClient();
+                    cmbCauta.SelectedValue = clienti.IDClient;
+                }
+            }
+               
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Rezervari
 {
     internal class DBConnect
     {
-        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-DVMI7TK\SQLEXPRESS;Initial Catalog=RezervareCamere;Integrated Security=True");
+        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JLQQ7TM\SQLEXPRESS03;Initial Catalog=RezervareCamere;Integrated Security=True");
         public SqlConnection GetCon()
         {
             return con;

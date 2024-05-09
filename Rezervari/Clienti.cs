@@ -23,10 +23,10 @@ namespace Rezervari
 
         private void Clienti_Load(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = false;
+            btnModificare.Visible = false;
             btnSterge.Visible = false;
-            btnRenunta.Visible = false;
-            btnAdauga.Visible = true;
+            btnRenuntare.Visible = false;
+            btnAdaugare.Visible = true;
             BindClient();
         }
         private void BindClient()
@@ -41,9 +41,9 @@ namespace Rezervari
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
                 dbCon.CloseCon();
-                btnAdauga.Visible = false;
+                btnAdaugare.Visible = false;
                 btnSterge.Visible = false;
-                btnRenunta.Visible = false;
+                btnRenuntare.Visible = false;
             }
             else
             {
@@ -244,9 +244,9 @@ namespace Rezervari
                                 MessageBox.Show("Client sters", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 txtClear();
                                 BindClient();
-                                btnActualizeaza.Visible = false;
+                                btnModificare.Visible = false;
                                 btnSterge.Visible = false;
-                                btnAdauga.Visible = true;
+                                btnAdaugare.Visible = true;
                             }
                             else
                             {
@@ -269,17 +269,17 @@ namespace Rezervari
         {
             if (DeschisDinRezervare)
             {
-                btnActualizeaza.Visible = true;
+                btnModificare.Visible = true;
                 btnSterge.Visible = false;
-                btnRenunta.Visible = false;
-                btnAdauga.Visible = false;
+                btnRenuntare.Visible = false;
+                btnAdaugare.Visible = false;
             }
             else
             {
-                btnActualizeaza.Visible = true;
+                btnModificare.Visible = true;
                 btnSterge.Visible = true;
-                btnRenunta.Visible = true;
-                btnAdauga.Visible = false;
+                btnRenuntare.Visible = true;
+                btnAdaugare.Visible = false;
             }
             IDClient = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             string fullName = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
@@ -299,10 +299,10 @@ namespace Rezervari
 
         private void btnRenunta_Click(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = false;
+            btnModificare.Visible = false;
             btnSterge.Visible = false;
-            btnRenunta.Visible = false;
-            btnAdauga.Visible = true;
+            btnRenuntare.Visible = false;
+            btnAdaugare.Visible = true;
 
             txtNume.Text = "";
             txtPrenume.Text = "";

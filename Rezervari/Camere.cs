@@ -25,7 +25,7 @@ namespace Rezervari
 
         private void Camere_Load(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = false;
+            btnModificare.Visible = false;
             btnSterge.Visible = false;
             btnRenunta.Visible = false;
             btnAdauga.Visible = true;
@@ -99,6 +99,10 @@ namespace Rezervari
         {
             try
             {
+                int parsareNrCamera;
+                int parsareNrLocuri;
+                int parsareEtaj;
+                int parsarePretZi;
                 if (txtNrCamera.Text == String.Empty)
                 {
                     MessageBox.Show("Introdu un nr de camera", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,6 +113,42 @@ namespace Rezervari
                 {
                     MessageBox.Show("Introdu un etaj", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEtaj.Focus();
+                    return;
+                }
+                else if (txtNrLocuri.Text == String.Empty)
+                {
+                    MessageBox.Show("Introdu numarul de locuri", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrLocuri.Focus();
+                    return;
+                }
+                else if (txtPretZi.Text == String.Empty)
+                {
+                    MessageBox.Show("Introdu pretul zilnic", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPretZi.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtNrCamera.Text, out parsareNrCamera))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul numar camera", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrCamera.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtEtaj.Text, out parsareEtaj))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul etaj", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEtaj.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtNrLocuri.Text, out parsareNrLocuri))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul numar locuri", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrLocuri.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtPretZi.Text, out parsarePretZi))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul pret zi", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPretZi.Focus();
                     return;
                 }
                 else
@@ -157,14 +197,14 @@ namespace Rezervari
         {
             if (DeschisDinRezervare)
             {
-                btnActualizeaza.Visible = true;
+                btnModificare.Visible = true;
                 btnSterge.Visible = false;
                 btnRenunta.Visible = false;
                 btnAdauga.Visible = false;
             }
             else
             {
-                btnActualizeaza.Visible = true;
+                btnModificare.Visible = true;
                 btnSterge.Visible = true;
                 btnRenunta.Visible = true;
                 btnAdauga.Visible = false;
@@ -192,6 +232,10 @@ namespace Rezervari
         {
             try
             {
+                int parsareNrCamera;
+                int parsareNrLocuri;
+                int parsareEtaj;
+                int parsarePretZi;
                 if (txtNrCamera.Text == String.Empty)
                 {
                     MessageBox.Show("Introdu un nr de camera", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -202,6 +246,42 @@ namespace Rezervari
                 {
                     MessageBox.Show("Introdu un etaj", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEtaj.Focus();
+                    return;
+                }
+                else if (txtNrLocuri.Text == String.Empty)
+                {
+                    MessageBox.Show("Introdu numarul de locuri", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrLocuri.Focus();
+                    return;
+                }
+                else if (txtPretZi.Text == String.Empty)
+                {
+                    MessageBox.Show("Introdu pretul zilnic", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPretZi.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtNrCamera.Text, out parsareNrCamera))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul numar camera", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrCamera.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtEtaj.Text, out parsareEtaj))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul etaj", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEtaj.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtNrLocuri.Text, out parsareNrLocuri))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul numar locuri", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNrLocuri.Focus();
+                    return;
+                }
+                else if (((!Int32.TryParse(txtPretZi.Text, out parsarePretZi))))
+                {
+                    MessageBox.Show("Puteti introduce numai numere in campul pret zi", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPretZi.Focus();
                     return;
                 }
                 else
@@ -280,7 +360,7 @@ namespace Rezervari
                                 MessageBox.Show("Camera stearsa", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 txtClear();
                                 BindCamera();
-                                btnActualizeaza.Visible = false;
+                                btnModificare.Visible = false;
                                 btnSterge.Visible = false;
                                 btnAdauga.Visible = true;
                             }
@@ -303,7 +383,7 @@ namespace Rezervari
 
         private void btnRenunta_Click(object sender, EventArgs e)
         {
-            btnActualizeaza.Visible = false;
+            btnModificare.Visible = false;
             btnSterge.Visible = false;
             btnRenunta.Visible = false;
             btnAdauga.Visible = true;

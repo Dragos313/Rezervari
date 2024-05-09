@@ -46,9 +46,9 @@
             // 
             this.lblTitlu.AutoSize = true;
             this.lblTitlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitlu.Location = new System.Drawing.Point(84, 91);
+            this.lblTitlu.Location = new System.Drawing.Point(75, 73);
             this.lblTitlu.Name = "lblTitlu";
-            this.lblTitlu.Size = new System.Drawing.Size(752, 38);
+            this.lblTitlu.Size = new System.Drawing.Size(661, 32);
             this.lblTitlu.TabIndex = 0;
             this.lblTitlu.Text = "Aplicatie pt. rezervarea camerelor dintr-un hotel";
             // 
@@ -56,9 +56,9 @@
             // 
             this.lblAutor.AutoSize = true;
             this.lblAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutor.Location = new System.Drawing.Point(267, 172);
+            this.lblAutor.Location = new System.Drawing.Point(237, 138);
             this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(379, 32);
+            this.lblAutor.Size = new System.Drawing.Size(323, 29);
             this.lblAutor.TabIndex = 1;
             this.lblAutor.Text = "Autor: Pana Dragos-Andrei";
             // 
@@ -66,44 +66,48 @@
             // 
             this.lblUtilizator.AutoSize = true;
             this.lblUtilizator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUtilizator.Location = new System.Drawing.Point(297, 247);
+            this.lblUtilizator.Location = new System.Drawing.Point(264, 198);
             this.lblUtilizator.Name = "lblUtilizator";
-            this.lblUtilizator.Size = new System.Drawing.Size(86, 25);
+            this.lblUtilizator.Size = new System.Drawing.Size(76, 20);
             this.lblUtilizator.TabIndex = 2;
             this.lblUtilizator.Text = "Utilizator";
             // 
             // txtUtilizator
             // 
             this.txtUtilizator.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUtilizator.Location = new System.Drawing.Point(411, 241);
+            this.txtUtilizator.Location = new System.Drawing.Point(365, 193);
+            this.txtUtilizator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUtilizator.Name = "txtUtilizator";
-            this.txtUtilizator.Size = new System.Drawing.Size(208, 30);
+            this.txtUtilizator.Size = new System.Drawing.Size(185, 26);
             this.txtUtilizator.TabIndex = 3;
             // 
             // txtParola
             // 
             this.txtParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParola.Location = new System.Drawing.Point(411, 294);
+            this.txtParola.Location = new System.Drawing.Point(365, 235);
+            this.txtParola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtParola.Name = "txtParola";
-            this.txtParola.Size = new System.Drawing.Size(208, 30);
+            this.txtParola.PasswordChar = '*';
+            this.txtParola.Size = new System.Drawing.Size(185, 26);
             this.txtParola.TabIndex = 5;
             // 
             // lblParola
             // 
             this.lblParola.AutoSize = true;
             this.lblParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParola.Location = new System.Drawing.Point(297, 297);
+            this.lblParola.Location = new System.Drawing.Point(264, 238);
             this.lblParola.Name = "lblParola";
-            this.lblParola.Size = new System.Drawing.Size(68, 25);
+            this.lblParola.Size = new System.Drawing.Size(57, 20);
             this.lblParola.TabIndex = 4;
             this.lblParola.Text = "Parola";
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(392, 348);
+            this.btnStart.Location = new System.Drawing.Point(348, 278);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(137, 46);
+            this.btnStart.Size = new System.Drawing.Size(122, 37);
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -112,7 +116,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rezervariToolStripMenuItem,
@@ -120,36 +123,37 @@
             this.clientiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(915, 36);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(813, 31);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // rezervariToolStripMenuItem
             // 
             this.rezervariToolStripMenuItem.Name = "rezervariToolStripMenuItem";
-            this.rezervariToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
+            this.rezervariToolStripMenuItem.Size = new System.Drawing.Size(93, 27);
             this.rezervariToolStripMenuItem.Text = "Rezervari";
             this.rezervariToolStripMenuItem.Click += new System.EventHandler(this.rezervariToolStripMenuItem_Click);
             // 
             // camereToolStripMenuItem
             // 
             this.camereToolStripMenuItem.Name = "camereToolStripMenuItem";
-            this.camereToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
+            this.camereToolStripMenuItem.Size = new System.Drawing.Size(83, 27);
             this.camereToolStripMenuItem.Text = "Camere";
             this.camereToolStripMenuItem.Click += new System.EventHandler(this.camereToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
             this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
-            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(83, 32);
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(72, 27);
             this.clientiToolStripMenuItem.Text = "Clienti";
             this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
             // 
             // FStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 481);
+            this.ClientSize = new System.Drawing.Size(813, 385);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtParola);
             this.Controls.Add(this.lblParola);
@@ -159,6 +163,7 @@
             this.Controls.Add(this.lblTitlu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FStart_Load);

@@ -30,7 +30,6 @@
         {
             this.cmbCamera = new System.Windows.Forms.ComboBox();
             this.dtpDataInceput = new System.Windows.Forms.DateTimePicker();
-            this.dtpDataSfarsit = new System.Windows.Forms.DateTimePicker();
             this.btnRenunta = new System.Windows.Forms.Button();
             this.btnSterge = new System.Windows.Forms.Button();
             this.btnActualizeaza = new System.Windows.Forms.Button();
@@ -45,39 +44,39 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNrCamera = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnModificaCamera = new System.Windows.Forms.Button();
+            this.dtpDataSfarsit = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnConfirmare = new System.Windows.Forms.Button();
+            this.lblOP = new System.Windows.Forms.Label();
+            this.pnlControale = new System.Windows.Forms.Panel();
+            this.txtNrc = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pnlControale.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbCamera
             // 
             this.cmbCamera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCamera.FormattingEnabled = true;
-            this.cmbCamera.Location = new System.Drawing.Point(138, 30);
+            this.cmbCamera.Location = new System.Drawing.Point(136, 12);
             this.cmbCamera.Name = "cmbCamera";
-            this.cmbCamera.Size = new System.Drawing.Size(176, 33);
+            this.cmbCamera.Size = new System.Drawing.Size(176, 28);
             this.cmbCamera.TabIndex = 0;
             this.cmbCamera.SelectedIndexChanged += new System.EventHandler(this.cmbCamera_SelectedIndexChanged);
             // 
             // dtpDataInceput
             // 
-            this.dtpDataInceput.Location = new System.Drawing.Point(103, 82);
+            this.dtpDataInceput.Location = new System.Drawing.Point(101, 64);
             this.dtpDataInceput.Name = "dtpDataInceput";
-            this.dtpDataInceput.Size = new System.Drawing.Size(211, 30);
+            this.dtpDataInceput.Size = new System.Drawing.Size(211, 26);
             this.dtpDataInceput.TabIndex = 2;
-            // 
-            // dtpDataSfarsit
-            // 
-            this.dtpDataSfarsit.Location = new System.Drawing.Point(103, 129);
-            this.dtpDataSfarsit.Name = "dtpDataSfarsit";
-            this.dtpDataSfarsit.Size = new System.Drawing.Size(211, 30);
-            this.dtpDataSfarsit.TabIndex = 3;
             // 
             // btnRenunta
             // 
             this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenunta.Location = new System.Drawing.Point(12, 354);
+            this.btnRenunta.Location = new System.Drawing.Point(982, 12);
             this.btnRenunta.Name = "btnRenunta";
             this.btnRenunta.Size = new System.Drawing.Size(134, 38);
             this.btnRenunta.TabIndex = 26;
@@ -88,7 +87,7 @@
             // btnSterge
             // 
             this.btnSterge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSterge.Location = new System.Drawing.Point(12, 299);
+            this.btnSterge.Location = new System.Drawing.Point(292, 12);
             this.btnSterge.Name = "btnSterge";
             this.btnSterge.Size = new System.Drawing.Size(134, 38);
             this.btnSterge.TabIndex = 25;
@@ -99,18 +98,18 @@
             // btnActualizeaza
             // 
             this.btnActualizeaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizeaza.Location = new System.Drawing.Point(12, 245);
+            this.btnActualizeaza.Location = new System.Drawing.Point(152, 12);
             this.btnActualizeaza.Name = "btnActualizeaza";
             this.btnActualizeaza.Size = new System.Drawing.Size(134, 38);
             this.btnActualizeaza.TabIndex = 24;
-            this.btnActualizeaza.Text = "Actualizeaza";
+            this.btnActualizeaza.Text = "Modificare";
             this.btnActualizeaza.UseVisualStyleBackColor = true;
             this.btnActualizeaza.Click += new System.EventHandler(this.btnActualizeaza_Click);
             // 
             // btnAdauga
             // 
             this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdauga.Location = new System.Drawing.Point(12, 191);
+            this.btnAdauga.Location = new System.Drawing.Point(12, 13);
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(134, 38);
             this.btnAdauga.TabIndex = 23;
@@ -130,7 +129,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.Location = new System.Drawing.Point(320, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -210,9 +209,9 @@
             // 
             this.lblNrCamera.AutoSize = true;
             this.lblNrCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNrCamera.Location = new System.Drawing.Point(7, 33);
+            this.lblNrCamera.Location = new System.Drawing.Point(5, 15);
             this.lblNrCamera.Name = "lblNrCamera";
-            this.lblNrCamera.Size = new System.Drawing.Size(107, 25);
+            this.lblNrCamera.Size = new System.Drawing.Size(91, 20);
             this.lblNrCamera.TabIndex = 30;
             this.lblNrCamera.Text = "Nr Camera";
             // 
@@ -220,26 +219,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 82);
+            this.label1.Location = new System.Drawing.Point(5, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 25);
+            this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 31;
             this.label1.Text = "De la";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Pana la";
             // 
             // btnModificaCamera
             // 
             this.btnModificaCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificaCamera.Location = new System.Drawing.Point(104, 28);
+            this.btnModificaCamera.Location = new System.Drawing.Point(102, 10);
             this.btnModificaCamera.Name = "btnModificaCamera";
             this.btnModificaCamera.Size = new System.Drawing.Size(31, 27);
             this.btnModificaCamera.TabIndex = 33;
@@ -247,23 +236,89 @@
             this.btnModificaCamera.UseVisualStyleBackColor = true;
             this.btnModificaCamera.Click += new System.EventHandler(this.btnModificaCamera_Click);
             // 
+            // dtpDataSfarsit
+            // 
+            this.dtpDataSfarsit.Location = new System.Drawing.Point(101, 111);
+            this.dtpDataSfarsit.Name = "dtpDataSfarsit";
+            this.dtpDataSfarsit.Size = new System.Drawing.Size(211, 26);
+            this.dtpDataSfarsit.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Pana la";
+            // 
+            // btnConfirmare
+            // 
+            this.btnConfirmare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmare.Location = new System.Drawing.Point(828, 12);
+            this.btnConfirmare.Name = "btnConfirmare";
+            this.btnConfirmare.Size = new System.Drawing.Size(134, 38);
+            this.btnConfirmare.TabIndex = 34;
+            this.btnConfirmare.Text = "Confirmare";
+            this.btnConfirmare.UseVisualStyleBackColor = true;
+            this.btnConfirmare.Click += new System.EventHandler(this.btnConfirmare_Click);
+            // 
+            // lblOP
+            // 
+            this.lblOP.AutoSize = true;
+            this.lblOP.Location = new System.Drawing.Point(694, 22);
+            this.lblOP.Name = "lblOP";
+            this.lblOP.Size = new System.Drawing.Size(33, 20);
+            this.lblOP.TabIndex = 35;
+            this.lblOP.Text = "OP";
+            // 
+            // pnlControale
+            // 
+            this.pnlControale.Controls.Add(this.label3);
+            this.pnlControale.Controls.Add(this.txtNrc);
+            this.pnlControale.Controls.Add(this.cmbCamera);
+            this.pnlControale.Controls.Add(this.dtpDataInceput);
+            this.pnlControale.Controls.Add(this.dtpDataSfarsit);
+            this.pnlControale.Controls.Add(this.btnModificaCamera);
+            this.pnlControale.Controls.Add(this.lblNrCamera);
+            this.pnlControale.Controls.Add(this.label2);
+            this.pnlControale.Controls.Add(this.label1);
+            this.pnlControale.Location = new System.Drawing.Point(786, 65);
+            this.pnlControale.Name = "pnlControale";
+            this.pnlControale.Size = new System.Drawing.Size(330, 204);
+            this.pnlControale.TabIndex = 36;
+            // 
+            // txtNrc
+            // 
+            this.txtNrc.Location = new System.Drawing.Point(101, 157);
+            this.txtNrc.Name = "txtNrc";
+            this.txtNrc.ReadOnly = true;
+            this.txtNrc.Size = new System.Drawing.Size(211, 26);
+            this.txtNrc.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 20);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Nrc";
+            // 
             // DetaliiRezervare
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 418);
-            this.Controls.Add(this.btnModificaCamera);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblNrCamera);
+            this.ClientSize = new System.Drawing.Size(1137, 445);
+            this.Controls.Add(this.pnlControale);
+            this.Controls.Add(this.lblOP);
+            this.Controls.Add(this.btnConfirmare);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRenunta);
             this.Controls.Add(this.btnSterge);
             this.Controls.Add(this.btnActualizeaza);
             this.Controls.Add(this.btnAdauga);
-            this.Controls.Add(this.dtpDataSfarsit);
-            this.Controls.Add(this.dtpDataInceput);
-            this.Controls.Add(this.cmbCamera);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DetaliiRezervare";
@@ -272,6 +327,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetaliiRezervare_FormClosing);
             this.Load += new System.EventHandler(this.DetaliiRezervare_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.pnlControale.ResumeLayout(false);
+            this.pnlControale.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +338,6 @@
 
         private System.Windows.Forms.ComboBox cmbCamera;
         private System.Windows.Forms.DateTimePicker dtpDataInceput;
-        private System.Windows.Forms.DateTimePicker dtpDataSfarsit;
         private System.Windows.Forms.Button btnRenunta;
         private System.Windows.Forms.Button btnSterge;
         private System.Windows.Forms.Button btnActualizeaza;
@@ -289,7 +345,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblNrCamera;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRezervare;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCamera_;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -298,5 +353,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button btnModificaCamera;
+        private System.Windows.Forms.DateTimePicker dtpDataSfarsit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnConfirmare;
+        private System.Windows.Forms.Label lblOP;
+        private System.Windows.Forms.Panel pnlControale;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNrc;
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnAdauga = new System.Windows.Forms.Button();
-            this.btnActualizeaza = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnAdaugare = new System.Windows.Forms.Button();
+            this.btnModificare = new System.Windows.Forms.Button();
             this.btnSterge = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,38 +43,42 @@
             this.lblNume = new System.Windows.Forms.Label();
             this.txtPrenume = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRenunta = new System.Windows.Forms.Button();
+            this.btnRenuntare = new System.Windows.Forms.Button();
+            this.btnConfirmare = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAdauga
+            // btnAdaugare
             // 
-            this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdauga.Location = new System.Drawing.Point(16, 173);
-            this.btnAdauga.Name = "btnAdauga";
-            this.btnAdauga.Size = new System.Drawing.Size(148, 52);
-            this.btnAdauga.TabIndex = 0;
-            this.btnAdauga.Text = "Adaugare";
-            this.btnAdauga.UseVisualStyleBackColor = true;
-            this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
+            this.btnAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdaugare.Location = new System.Drawing.Point(12, 13);
+            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdaugare.Name = "btnAdaugare";
+            this.btnAdaugare.Size = new System.Drawing.Size(132, 42);
+            this.btnAdaugare.TabIndex = 0;
+            this.btnAdaugare.Text = "Adaugare";
+            this.btnAdaugare.UseVisualStyleBackColor = true;
+            this.btnAdaugare.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
-            // btnActualizeaza
+            // btnModificare
             // 
-            this.btnActualizeaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizeaza.Location = new System.Drawing.Point(17, 236);
-            this.btnActualizeaza.Name = "btnActualizeaza";
-            this.btnActualizeaza.Size = new System.Drawing.Size(147, 52);
-            this.btnActualizeaza.TabIndex = 1;
-            this.btnActualizeaza.Text = "Actualizeaza";
-            this.btnActualizeaza.UseVisualStyleBackColor = true;
-            this.btnActualizeaza.Click += new System.EventHandler(this.btnActualizeaza_Click);
+            this.btnModificare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificare.Location = new System.Drawing.Point(150, 13);
+            this.btnModificare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificare.Name = "btnModificare";
+            this.btnModificare.Size = new System.Drawing.Size(131, 42);
+            this.btnModificare.TabIndex = 1;
+            this.btnModificare.Text = "Modificare";
+            this.btnModificare.UseVisualStyleBackColor = true;
+            this.btnModificare.Click += new System.EventHandler(this.btnActualizeaza_Click);
             // 
             // btnSterge
             // 
             this.btnSterge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSterge.Location = new System.Drawing.Point(17, 300);
+            this.btnSterge.Location = new System.Drawing.Point(287, 11);
+            this.btnSterge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSterge.Name = "btnSterge";
-            this.btnSterge.Size = new System.Drawing.Size(147, 52);
+            this.btnSterge.Size = new System.Drawing.Size(131, 42);
             this.btnSterge.TabIndex = 2;
             this.btnSterge.Text = "Stergere";
             this.btnSterge.UseVisualStyleBackColor = true;
@@ -83,34 +87,35 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NrTelefon,
             this.NumeClient});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Location = new System.Drawing.Point(372, 18);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 417);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 281);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -145,74 +150,90 @@
             // txtNrTelefon
             // 
             this.txtNrTelefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNrTelefon.Location = new System.Drawing.Point(116, 121);
+            this.txtNrTelefon.Location = new System.Drawing.Point(694, 179);
+            this.txtNrTelefon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNrTelefon.Name = "txtNrTelefon";
-            this.txtNrTelefon.Size = new System.Drawing.Size(208, 30);
+            this.txtNrTelefon.Size = new System.Drawing.Size(185, 26);
             this.txtNrTelefon.TabIndex = 9;
             // 
             // lblParola
             // 
             this.lblParola.AutoSize = true;
             this.lblParola.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParola.Location = new System.Drawing.Point(12, 126);
+            this.lblParola.Location = new System.Drawing.Point(602, 183);
             this.lblParola.Name = "lblParola";
-            this.lblParola.Size = new System.Drawing.Size(98, 25);
+            this.lblParola.Size = new System.Drawing.Size(82, 20);
             this.lblParola.TabIndex = 8;
             this.lblParola.Text = "NrTelefon";
             // 
             // txtNume
             // 
             this.txtNume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNume.Location = new System.Drawing.Point(116, 18);
+            this.txtNume.Location = new System.Drawing.Point(694, 96);
+            this.txtNume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNume.Name = "txtNume";
-            this.txtNume.Size = new System.Drawing.Size(208, 30);
+            this.txtNume.Size = new System.Drawing.Size(185, 26);
             this.txtNume.TabIndex = 7;
             // 
             // lblNume
             // 
             this.lblNume.AutoSize = true;
             this.lblNume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNume.Location = new System.Drawing.Point(12, 24);
+            this.lblNume.Location = new System.Drawing.Point(602, 101);
             this.lblNume.Name = "lblNume";
-            this.lblNume.Size = new System.Drawing.Size(64, 25);
+            this.lblNume.Size = new System.Drawing.Size(53, 20);
             this.lblNume.TabIndex = 6;
             this.lblNume.Text = "Nume";
             // 
             // txtPrenume
             // 
             this.txtPrenume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenume.Location = new System.Drawing.Point(116, 69);
+            this.txtPrenume.Location = new System.Drawing.Point(694, 137);
+            this.txtPrenume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrenume.Name = "txtPrenume";
-            this.txtPrenume.Size = new System.Drawing.Size(208, 30);
+            this.txtPrenume.Size = new System.Drawing.Size(185, 26);
             this.txtPrenume.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 74);
+            this.label1.Location = new System.Drawing.Point(602, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 25);
+            this.label1.Size = new System.Drawing.Size(76, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Prenume";
             // 
-            // btnRenunta
+            // btnRenuntare
             // 
-            this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenunta.Location = new System.Drawing.Point(17, 364);
-            this.btnRenunta.Name = "btnRenunta";
-            this.btnRenunta.Size = new System.Drawing.Size(147, 52);
-            this.btnRenunta.TabIndex = 12;
-            this.btnRenunta.Text = "Renunta";
-            this.btnRenunta.UseVisualStyleBackColor = true;
-            this.btnRenunta.Click += new System.EventHandler(this.btnRenunta_Click);
+            this.btnRenuntare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRenuntare.Location = new System.Drawing.Point(748, 13);
+            this.btnRenuntare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRenuntare.Name = "btnRenuntare";
+            this.btnRenuntare.Size = new System.Drawing.Size(131, 42);
+            this.btnRenuntare.TabIndex = 12;
+            this.btnRenuntare.Text = "Renuntare";
+            this.btnRenuntare.UseVisualStyleBackColor = true;
+            this.btnRenuntare.Click += new System.EventHandler(this.btnRenunta_Click);
+            // 
+            // btnConfirmare
+            // 
+            this.btnConfirmare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmare.Location = new System.Drawing.Point(606, 13);
+            this.btnConfirmare.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirmare.Name = "btnConfirmare";
+            this.btnConfirmare.Size = new System.Drawing.Size(131, 42);
+            this.btnConfirmare.TabIndex = 13;
+            this.btnConfirmare.Text = "Confirmare";
+            this.btnConfirmare.UseVisualStyleBackColor = true;
             // 
             // Clienti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 450);
-            this.Controls.Add(this.btnRenunta);
+            this.ClientSize = new System.Drawing.Size(913, 360);
+            this.Controls.Add(this.btnConfirmare);
+            this.Controls.Add(this.btnRenuntare);
             this.Controls.Add(this.txtPrenume);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNrTelefon);
@@ -221,8 +242,9 @@
             this.Controls.Add(this.lblNume);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSterge);
-            this.Controls.Add(this.btnActualizeaza);
-            this.Controls.Add(this.btnAdauga);
+            this.Controls.Add(this.btnModificare);
+            this.Controls.Add(this.btnAdaugare);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Clienti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clienti";
@@ -236,8 +258,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdauga;
-        private System.Windows.Forms.Button btnActualizeaza;
+        private System.Windows.Forms.Button btnAdaugare;
+        private System.Windows.Forms.Button btnModificare;
         private System.Windows.Forms.Button btnSterge;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtNrTelefon;
@@ -249,6 +271,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NrTelefon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeClient;
-        private System.Windows.Forms.Button btnRenunta;
+        private System.Windows.Forms.Button btnRenuntare;
+        private System.Windows.Forms.Button btnConfirmare;
     }
 }
